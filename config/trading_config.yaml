@@ -1,0 +1,35 @@
+signal:
+  confidence_threshold: 0.60
+  class_map:
+    0: "UP"
+    1: "FLAT"
+    2: "DOWN"
+  signal_cooldown_bars: 4
+
+risk:
+  risk_per_trade: 0.01
+  stop_loss_pips: 20
+  take_profit_pips: 40
+  max_open_positions: 1
+  max_daily_drawdown: 0.05
+
+sizing:
+  method: "fixed_fractional"
+  min_lot: 0.01
+  max_lot: 0.10
+  lot_step: 0.01
+
+mt5:
+  account: null
+  server: null
+  password: null
+  max_slippage_points: 10
+  filling_mode: "ioc"
+  magic_number: 20240101
+
+paper:
+  enabled: true
+  initial_balance: 10000.0
+  spread_pips: 1.5
+  commission_per_lot: 3.50
+  slippage_pips: 0.5

@@ -1,0 +1,53 @@
+active_model: "lstm"
+
+input:
+  sequence_length: 60
+  n_features: null
+
+output:
+  n_classes: 3
+
+lstm:
+  hidden_size: 128
+  num_layers: 2
+  dropout: 0.3
+  bidirectional: false
+  fc_hidden: 64
+
+gru:
+  hidden_size: 128
+  num_layers: 2
+  dropout: 0.3
+  bidirectional: false
+  fc_hidden: 64
+
+tft:
+  d_model: 64
+  n_heads: 4
+  n_encoder_layers: 2
+  n_decoder_layers: 1
+  dropout: 0.1
+  ff_dim: 256
+
+baseline:
+  strategy: "previous_bar"
+
+training:
+  batch_size: 64
+  epochs: 100
+  learning_rate: 0.001
+  optimizer: "adam"
+  weight_decay: 1.0e-5
+
+  scheduler:
+    type: "cosine"
+    T_max: 50
+    eta_min: 1.0e-6
+
+  early_stopping:
+    patience: 15
+    min_delta: 1.0e-4
+    restore_best: true
+
+  gradient_clip: 1.0
+  class_weights: "balanced"

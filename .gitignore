@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+venv/
+
+# Secrets
+.env
+
+# Data
+data/raw/
+data/processed/
+data/features/
+data/live/
+
+# Models
+models/checkpoints/
+models/production/
+*.pth
+*.pt
+*.ckpt
+
+# Logs
+logs/
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,46 @@
+project:
+  name: "forex-dl-signals"
+  version: "0.1.0"
+  environment: "development"
+  seed: 42
+
+instruments:
+  active:
+    - "EURUSD"
+  available:
+    - "EURUSD"
+    - "GBPUSD"
+    - "USDJPY"
+    - "AUDUSD"
+
+timeframes:
+  primary: "H1"
+  context:
+    - "H4"
+    - "D1"
+
+data:
+  history_years: 5
+  train_ratio: 0.70
+  val_ratio:   0.15
+  test_ratio:  0.15
+
+paths:
+  data:
+    raw:        "data/raw"
+    processed:  "data/processed"
+    features:   "data/features"
+    live:       "data/live"
+  models:
+    checkpoints: "models/checkpoints"
+    production:  "models/production"
+  logs: "logs"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
+  datefmt: "%Y-%m-%d %H:%M:%S"
+  file_enabled: true
+  file_path: "logs/app.log"
+  rotate_mb: 10
+  backup_count: 5
